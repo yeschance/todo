@@ -17,12 +17,12 @@ function paintGreetings(name) {
     const date = new Date();
     const hours = date.getHours();
     let mention = 'Hello';
-    if(0<= hours && hours < 5 || 17 < hours){
-        mention = 'Good Evening';
-    } else if (hours<17){
-        mention = 'Good Afternoon';
-    } else if {
+    if(hours >= 5 && hours < 12){
         mention = 'Good Morning';
+    } else if (hours >= 12 && hours < 17){
+        mention = 'Good Afternoon';
+    } else {
+        mention = 'Good Evening';
     }
     greeting.innerText = `${mention}, ${name}.`;
     greeting.classList.remove(HIDDEN_CLASSNAME);
